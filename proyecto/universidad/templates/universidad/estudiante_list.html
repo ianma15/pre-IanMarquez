@@ -1,0 +1,16 @@
+{% extends 'universidad/base.html' %}
+
+{% block header %}
+    Estudiantes: Registro
+{% endblock header %}
+
+{% block main %}
+    <button>
+        <a href="{% url 'estudiante_create' %}">Crear Registro</a>
+    </button>
+    {% for object in object_list %}
+        <p>{{ object.apellido | upper }}, {{ object.nombre }} - DNI: {{ object.dni }}</p>
+    {% empty %}
+        <p>No hay registros de estudiantes</p>
+    {% endfor %}
+{% endblock main %}

@@ -5,8 +5,8 @@
 {% endblock header %}
 
 {% block main %}
-    <button><a href="#">🏠Home</a></button>
-    <button><a href="#">👦🏻👧🏻Estudiantes</a></button>
-    <button><a href="#">📚Materias</a></button>
-    <button><a href="#">📋Solicites de Inscripcion</a></button>
+    <button><a href="{% url 'index' %}">🏠Home</a></button>
+    <button><a href="{% url 'estudiante_list' %}">👦🏻👧🏻Estudiantes</a></button>
+    <button><a href="{% url 'materia_list' %}">📚Materias</a></button>
+    <button><a href="{% url 'solicitud_list' %}">📋Solicitudes de Inscripcion</a></button>
 {% endblock main %}

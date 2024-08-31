@@ -1,0 +1,16 @@
+{% extends 'universidad/base.html' %}
+
+{% block header %}
+    Materias: Registro
+{% endblock header %}
+
+{% block main %}
+    <button>
+        <a href="{% url 'materia_create' %}">Crear Registro</a>
+    </button>
+    {% for object in object_list %}
+        <p>{{ object.nombre }} | {{ object.turno_de_cursada }} </p>
+    {% empty %}
+        <p>No hay registros de materias</p>
+    {% endfor %}
+{% endblock main %}

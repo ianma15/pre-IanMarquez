@@ -1,0 +1,17 @@
+{% extends 'universidad/base.html' %}
+
+{% block header %}
+    Solicitudes: Registro
+{% endblock header %}
+
+{% block main %}
+    <button>
+        <a href="{% url 'solicitud_create' %}">Crear Registro</a>
+    </button>
+    {% for object in object_list %}
+        <p>Materia: {{ object.materia }} - Estudiante: {{ object.estudiante.apellido | upper }}, 
+            {{ object.estudiante.nombre }} - Estado: {{  object.estado | upper}}</p>
+    {% empty %}
+        <p>No hay registros de solicitudes</p>
+    {% endfor %}
+{% endblock main %}

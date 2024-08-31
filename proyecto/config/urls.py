@@ -21,4 +21,10 @@ from universidad import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="index"),
+    path('estudiante/list/', views.estudiante_list, name="estudiante_list"),
+    path('materia/list/', views.materia_list, name="materia_list"),
+    path('solicitud/list/', views.solicitud_list, name="solicitud_list"),
+    path('estudiante/create/', views.estudiante_create, name="estudiante_create"),
+    path('materia/create/', views.materia_create, name="materia_create"),
+    path('solicitud/create/', views.solicitud_create, name="solicitud_create"),
 ]
