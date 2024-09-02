@@ -5,6 +5,10 @@
 {% endblock header %}
 
 {% block main %}
+    <form action="{% url 'estudiante_list' %}" method="get">
+        <input type="text" name="q" placeholder="Buscar por apellido...">
+        <button type="submit">Buscar</button>
+    </form>
     <button>
         <a href="{% url 'estudiante_create' %}">Crear Registro</a>
     </button>
