@@ -1,10 +1,6 @@
 from django.contrib import admin
 from .models import Estudiante, Materia, Solicitud
 
-#admin.site.register(Estudiante)
-#admin.site.register(Materia)
-#admin.site.register(Solicitud)
-
 @admin.register(Estudiante)
 class EstudianteAdmin(admin.ModelAdmin):
     list_display = ('apellido', 'nombre', 'dni')
