@@ -6,6 +6,7 @@ class EstudianteForm(forms.ModelForm):
     class Meta:
         model = Estudiante
         fields = "__all__"
+        widgets = {"fecha_de_nacimiento": forms.DateInput(attrs={"type": "date"})}
 
     def clean_nombre(self):
         nombre = self.cleaned_data.get('nombre', '')
