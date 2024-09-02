@@ -6,18 +6,30 @@ def index(request):
     return render(request, 'universidad/index.html')
 
 def estudiante_list(request):
-    query = Estudiante.objects.all()
-    context = {"object_list": query}
+    query = request.GET.get("q")
+    if query:
+        estudiantes = Estudiante.objects.filter(apellido__contains=query)
+    else:
+        estudiantes = Estudiante.objects.all()
+    context = {"object_list": estudiantes}
     return render(request, "universidad/estudiante_list.html", context)
 
 def materia_list(request):
-    query = Materia.objects.all()
-    context = {"object_list": query}
+    query = request.GET.get("q")
+    if query:
+        materias = Materia.objects.filter(nombre__contains=query)
+    else:
+        materias = Materia.objects.all()
+    context = {"object_list": materias}
     return render(request, "universidad/materia_list.html", context)
 
 def solicitud_list(request):
-    query = Solicitud.objects.all()
-    context = {"object_list": query}
+    query = request.GET.get("q")
+    if query:
+        solicitudes = Solicitud.objects.filter(materia__nombre__contains=query)
+    else:
+        solicitudes = Solicitud.objects.all()
+    context = {"object_list": solicitudes}
     return render(request, "universidad/solicitud_list.html", context)
 
 def estudiante_create(request):
